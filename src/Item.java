@@ -11,6 +11,10 @@ class Item {
         this.stock = this.stock + amount;
     }
 
+    public int getStock() {
+        return stock;
+    }
+
     void purchase(int amount) {
         this.stock = this.stock - amount;
     }

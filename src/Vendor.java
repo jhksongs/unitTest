@@ -15,9 +15,21 @@ class Vender {
         this.balance = 0;
     }
 
+    int getItemNumber(String name){
+        if(Stock.get(name)!=null) {
+            return Stock.get(name).getStock();
+        }else return 0;
+    }
+
     /** resets the Balance to 0 */
     void resetBalance () {
         this.balance = 0;
+    }
+
+    void restockItem(String name, int itemQuantity){
+        if(Stock.get(name)!=null) {
+            Stock.get(name).restock(itemQuantity);
+        }
     }
 
     /** returns the current balance */
