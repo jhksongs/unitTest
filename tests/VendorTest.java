@@ -55,6 +55,13 @@ public class VendorTest {
         assertEquals(v.getBalance(),0.75);
     }
 
+    @Test
+    void BuyItemC_insufficentfunds(){
+        v.addMoney(0);
+        v.select("Candy");
+        assertEquals(v.getItemNumber(v,"Candy"),2);
+    }
+
 
     @Test
     void RestockItemsA(){
